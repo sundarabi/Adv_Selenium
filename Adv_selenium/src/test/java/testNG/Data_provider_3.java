@@ -16,7 +16,7 @@ package testNG;
 
 
 	public class Data_provider_3 {
-
+//pull
 		@Test(dataProvider = "readData")
 		public void createOrganization(String name, String phnNum, String mailId) throws Throwable {
 
