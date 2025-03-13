@@ -18,7 +18,7 @@ import pom_repo.LoginPageEx;
 
 public class Base_class {
 
-	public static WebDriver driver;
+	public WebDriver driver;
 	public static WebDriver sdriver;
 	public Java_Utility jlib = new Java_Utility();
 	public Excel_Utility elib = new Excel_Utility();
@@ -30,7 +30,7 @@ public class Base_class {
 		System.out.println("DataBase connection");
 	}
 
-	@BeforeTest(groups = {"smokeTest","regressionTest"})
+	@BeforeTest
 	public void BT() {
 		System.out.println("Parallel execution");
 	}
@@ -40,7 +40,8 @@ public class Base_class {
 //	public void BC(String BROWSER) throws Throwable {
 
 	public void BC() throws Throwable {
-	String BROWSER = flib.getKeyAndValueData("browser");
+	String BROWSER = flib.getCommonData("browser");
+	//	String BROWSER = System.getProperty("browser");
 
 		if (BROWSER.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
@@ -61,9 +62,9 @@ public class Base_class {
 		wlib.maximizeWindow(driver);
 		wlib.loadTheElements(driver);
 
-		String URL = flib.getKeyAndValueData("url");
-		String USERNAME = flib.getKeyAndValueData("username");
-		String PASSWORD = flib.getKeyAndValueData("password");
+		String URL = flib.getCommonData("url");
+		String USERNAME = flib.getCommonData("username");
+		String PASSWORD = flib.getCommonData("password");
 		driver.get(URL);
 
 		// using Business Logics
@@ -95,5 +96,4 @@ public class Base_class {
 	public void AS() {
 		System.out.println("DataBase Connection close");
 	}
-
 }

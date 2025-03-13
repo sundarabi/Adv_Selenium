@@ -2,6 +2,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
-  <classes><class name="organization.CreateCampaigns"></class></classes>
+  <classes><class name="campaigns.CreateCampaigns"></class></classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -15,7 +15,7 @@ public class Listeners implements ITestListener {
 
 		public void onTestFailure (ITestResult result) {
 
-		TakesScreenshot ts =(TakesScreenshot) Base_class.driver;
+		TakesScreenshot ts =(TakesScreenshot) Base_class.sdriver;
 
 		File src= ts.getScreenshotAs (OutputType. FILE);
 

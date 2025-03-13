@@ -3,9 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
   <classes>
-  			<class name="organization.CreateCampaigns" />
+  			<class name="campaigns.CreateCampaigns" />
 
-			<class name="organization.campcreateWpro" />
+			<class name="campaign.campcreateWpro" />
 
 </classes>
   </test> <!-- Test -->

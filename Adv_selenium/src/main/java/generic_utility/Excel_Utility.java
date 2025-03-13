@@ -14,30 +14,19 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class Excel_Utility {
 
-	public String getExcelData(String sheetName,int rowNum,int cellNum) throws Throwable
-	{
-	// step1:- connecting the excel file
-			FileInputStream file = new FileInputStream(Paths.excelpath);
 
-			// step2:- keep excel in read mode
-			Workbook book = WorkbookFactory.create(file);
-
-			// step3:- navigate into excel sheet
-			Sheet sheet = book.getSheet(sheetName);
-
-			// step4:- navigate into row
-			Row row = sheet.getRow(rowNum);
-
-			// step5:-navigate into cell
-			Cell cell = row.getCell(cellNum);
-
-			String excelData = cell.getStringCellValue();
-			System.out.println(excelData);
-			return excelData;
-}
-////-----------------------------------------------------------------------------------------------------------	
-	public String readDataUsingDataFormatter(String sheetName,int rowNum,int cellNum ) throws Throwable
-	{
+	/**
+	 * This method is used to read data from excel file
+	 * 
+	 * @param sheetName
+	 * @param rowNum
+	 * @param cellNum
+	 * @return String
+	 * @throws Throwable
+	 * @author Shobha
+	 */
+	public String getExcelData(String sheetName, int rowNum, int cellNum) throws Throwable {
+		// step1:- connecting the excel file
 		FileInputStream file = new FileInputStream(Paths.excelpath);
 
 		// step2:- keep excel in read mode
@@ -51,16 +40,38 @@ public class Excel_Utility {
 
 		// step5:-navigate into cell
 		Cell cell = row.getCell(cellNum);
-		
+
+		String excelData = cell.getStringCellValue();
+		System.out.println(excelData);
+		return excelData;
+	}
+
+//-----------------------------------------------------------------------------------------------------------	
+	public String readDataUsingDataFormatter(String sheetName, int rowNum, int cellNum) throws Throwable {
+		FileInputStream file = new FileInputStream(Paths.excelpath);
+
+		// step2:- keep excel in read mode
+		Workbook book = WorkbookFactory.create(file);
+
+		// step3:- navigate into excel sheet
+		Sheet sheet = book.getSheet(sheetName);
+
+		// step4:- navigate into row
+		Row row = sheet.getRow(rowNum);
+
+		// step5:-navigate into cell
+		Cell cell = row.getCell(cellNum);
+
 		DataFormatter format = new DataFormatter();
 		String ExcelData = format.formatCellValue(cell);
 		System.out.println(ExcelData);
 		return ExcelData;
 
 	}
-	
+
+	// --------------------------------------------------------------------------------------------------------
 	public Object[][] readExcelDataForDataProvider(String sheetName) throws Throwable, IOException {
-		FileInputStream file = new FileInputStream("./src/test/resources/data_fetch.xlsx");
+		FileInputStream file = new FileInputStream(Paths.excelpath);
 
 		// step2:- keep excel in read mode
 		Workbook book = WorkbookFactory.create(file);
@@ -78,7 +89,6 @@ public class Excel_Utility {
 			}
 		}
 		return objArr;
-
 
 	}
 	

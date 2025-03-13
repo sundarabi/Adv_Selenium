@@ -63,6 +63,20 @@ public class HomePage {
 	admLink.click();
 	signOutLink.click();
 	}
+	public void clickPrdLink()
+	{
+		prdLink.click();
+	}
 	
+	public void clickCamp()
+	{
+		moreLink.click();
+		campLink.click();
+	}
+	
+	public void clickOrgLink()
+	{
+		orgLink.click();
+	}
 	
 }

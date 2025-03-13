@@ -49,14 +49,14 @@ public class Extent_Report implements ITestListener {
 		ExtentSparkReporter spark = new ExtentSparkReporter("ExtentReport/Report.html" + time);
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setDocumentTitle("VtigerReports");
-		spark.config().setReportName("Sundar");
+		spark.config().setReportName("ABi");
 
 		// system configure
 		report = new ExtentReports();
 		report.attachReporter(spark);
 		report.setSystemInfo("platform", "windows");
-		report.setSystemInfo("executedBy", "SUNDAR");
-		report.setSystemInfo("reviewedBy", "ani");
+		report.setSystemInfo("executedBy", "Sundar");
+		report.setSystemInfo("reviewedBy", "Dragon");
 
 	}
 

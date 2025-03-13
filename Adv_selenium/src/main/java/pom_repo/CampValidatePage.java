@@ -12,15 +12,15 @@ public class CampValidatePage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public String ValidateCamp(WebDriver driver,String campName)
+	public String ValidateCamp(WebDriver driver)
 	{
 		String actData = driver.findElement(By.xpath("//span[@id='dtlview_Campaign Name']")).getText();
 
-		if (actData.contains(campName)) {
-			System.out.println("campagin name is created");
-		} else {
-			System.out.println("Campaign name is not created");
-		}
+//		if (actData.contains(campName)) {
+//			System.out.println("campagin name is created");
+//		} else {
+//			System.out.println("Campaign name is not created");
+//		}
 		return actData;
 		
 	}
