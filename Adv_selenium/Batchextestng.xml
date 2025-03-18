@@ -5,7 +5,7 @@
   <classes>
   			<class name="campaigns.CreateCampaigns" />
 
-			<class name="campaign.campcreateWpro" />
+			<class name="campaigns.campcreateWpro" />
 
 </classes>
   </test> <!-- Test -->
