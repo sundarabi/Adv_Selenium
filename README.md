@@ -9,4 +9,4 @@ A robust automation testing framework using **Selenium WebDriver**, **TestNG**, 
 - **Parallel Execution**: Configured via TestNG  
 - **Exception Handling & Logging**: Better debugging and stability  
 
-## 📂 Folder Structure
+
